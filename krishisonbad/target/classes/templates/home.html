@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>উদ্যমকৃষি</title>
+    <!-- Link to Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #008080;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            width: 100%;
+            background-color: #008080;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #004d4d;
+            color: #e0e0e0;
+        }
+
+        /* Main Content Styles */
+        .content {
+            margin-top: 100px; /* Adjust for the height of the navbar */
+            text-align: center;
+        }
+
+        /* Button Styles */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .button-group a {
+            padding: 12px 30px;
+            background-color: #008080;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button-group a:hover {
+            background-color: #004d4d;
+            transform: scale(1.05);
+        }
+
+        /* Services Section Styles */
+        .services {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .services h2 {
+            color: #008080;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #f4f4f4;
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            color: #008080;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card .service-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        /* Contact Section Styles */
+        .contact {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #008080;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-info div {
+            margin-bottom: 15px;
+        }
+
+        .contact-info div i {
+            font-size: 20px;
+            color: #008080;
+            margin-right: 10px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #aaaaaa;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/home" class="active">হোম</a>
+        <a href="/about">সম্পর্কে</a>
+        <a href="/user-page" id="dashboard-link" style="display: none;">ড্যাশবোর্ড</a>
+        <a href="/services" id="services-link" style="display: none;">সেবাসমূহ</a>
+        <a href="/agroshop" id="agroshop-link" style="display: none;">এগ্রোশপ</a>
+        <a href="/contact">যোগাযোগ</a>
+        
+    </div>
+
+    <div class="content">
+        <h1>উদ্যমকৃষিতে আপনাকে স্বাগতম!</h1>
+        <div class="button-group" id="button-group">
+            <a href="/login" id="login-button">লগইন</a>
+            <a href="/registration" id="signup-button">রেজিস্ট্রার</a>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+        <h2>আমাদের সেবা সমূহ</h2>
+        <div class="service-cards">
+            <!-- Premium Service Card -->
+            <a href="/service/premium" class="service-card" id="premium-service-link">
+                <h3>প্রিমিয়াম সেবা</h3>
+                <p>উদ্যমকৃষি/কৃষিবার্তা মাধ্যমে আপনরা কৃষি বিষয়ক সংবাদ পাবেন। এছাড়া কোন সময় কোন ফসল করলে লাভ হবে অন্যান্য নির্দেশনা দেয়া হবে</p>
+                <div class="service-price">৩০০টাকা/মাস</div>
+            </a>
+
+            <!-- SMS Service Card -->
+            <a href="/service/sms" class="service-card" id="sms-service-link">
+                <h3>এসএমএস সেবা</h3>
+                <p>রবি সিম ব্যবহারকারী:
+                    যে ব্যবহারকারীরা এই অ্যাপ্লিকেশনটিতে সদস্যতা নেবেন তাদের START krishisonbad লিখে 21213 নম্বরে এসএমএস পাঠাতে হবে
+                    আনসাবস্ক্রাইব করতে, STOP krishisonbad টাইপ করুন এবং 21213 নম্বরে পাঠান</p>
+                <div class="service-price">এসএমএস চার্জ</div>
+            </a>
+
+            <!-- Get Farming Information Card -->
+            <a href="/service/farming-info" class="service-card" id="farming-info-link">
+                <h3>AI ব্যবহার করে কৃষি তথ্য পান</h3>
+                <p>ফসল নির্বাচন গাইড, মাটি ব্যবস্থাপনা টিপস এবং বাজারের প্রবণতা সহ কৃষি তথ্যের একটি বিশাল লাইব্রেরি অ্যাক্সেস করুন। নতুন এবং অভিজ্ঞ কৃষক উভয়ের জন্যই আদর্শ।</p>
+                <div class="service-price">Free</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h2>আমাদের সাথে যোগাযোগ করুন</h2>
+        <div class="contact-info">
+            <div><i class="fas fa-envelope"></i>Email: mostafijur.bd786@gmail.com</div>
+            <div><i class="fas fa-phone"></i>Phone:+80001775149757</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 উদ্যমকৃষি. All rights reserved.
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- JavaScript for handling navigation visibility and redirection -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate authentication state
+            var isAuthenticated = false; // Replace this with your actual authentication logic
+
+            if (isAuthenticated) {
+                document.getElementById('login-button').style.display = 'none';
+                document.getElementById('signup-button').style.display = 'none';
+                document.getElementById('services-link').style.display = 'inline';
+                document.getElementById('agroshop-link').style.display = 'inline';
+                document.getElementById('button-group').style.display = 'none';
+            } else {
+                document.getElementById('services-link').style.display = 'none';
+                document.getElementById('agroshop-link').style.display = 'none';
+                document.getElementById('button-group').style.display = 'flex';
+                
+                // Attach click event to service links
+                document.querySelectorAll('.service-card').forEach(function(card) {
+                    card.addEventListener('click', function(event) {
+                        event.preventDefault(); // Prevent the default action
+                        window.location.href = '/login'; // Redirect to login page
+                    });
+                });
+            }
+        });
+        var isLoggedIn = false; // Set this based on actual authentication status
+
+        if (isLoggedIn) {
+            document.getElementById('dashboard-link').style.display = 'inline';
+        }
+    </script>
+</body>
+</html>

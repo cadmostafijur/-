@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>উদ্যমকৃষিতে - আমাদের সেবাসমূহ</title>
+    <!-- Link to Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #008080;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            width: 100%;
+            background-color: #008080;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #004d4d;
+            color: #e0e0e0;
+        }
+
+        /* Main Content Styles */
+        .content {
+            margin-top: 80px; /* Adjust for the height of the navbar */
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Services Section Styles */
+        .services {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .services h2 {
+            color: #008080;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #f4f4f4;
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            color: #008080;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card .service-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        /* Footer Styles */
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            color: #aaaaaa;
+            font-size: 14px;
+            font-weight: 400;
+            background-color: #f4f4f4;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/home">হোম</a>
+        <a href="/about">সম্পর্কে</a>
+        <a href="/user-page">ড্যাশবোর্ড</a>
+        <a href="/services" class="active">সেবাসমূহ</a>
+        <a href="/agroshop">এগ্রোশপ</a>
+        <a href="/contact">যোগাযোগ</a>
+    </div>
+
+    <div class="content">
+        <h1>আমাদের সেবাসমূহ</h1>
+        <div class="service-cards">
+            <!-- Premium Service Card -->
+            <a href="/service/premium" class="service-card" id="premium-service-link">
+                <h3>প্রিমিয়াম সেবা</h3>
+                <p>উদ্যমকৃষি/কৃষিবার্তা মাধ্যমে আপনরা কৃষি বিষয়ক সংবাদ পাবেন। এছাড়া কোন সময় কোন ফসল করলে লাভ হবে অন্যান্য নির্দেশনা দেয়া হবে</p>
+                <div class="service-price">৩০০টাকা/মাস</div>
+            </a>
+
+            <!-- SMS Service Card -->
+            <a href="/service/sms" class="service-card" id="sms-service-link">
+                <h3>এসএমএস সেবা</h3>
+                <p>রবি সিম ব্যবহারকারী:
+                    যে ব্যবহারকারীরা এই অ্যাপ্লিকেশনটিতে সদস্যতা নেবেন তাদের START krishisonbad লিখে 21213 নম্বরে এসএমএস পাঠাতে হবে
+                    আনসাবস্ক্রাইব করতে, STOP krishisonbad টাইপ করুন এবং 21213 নম্বরে পাঠান</p>
+                <div class="service-price">এসএমএস চার্জ</div>
+            </a>
+
+            <!-- Get Farming Information Card -->
+            <a href="/service/farming-info" class="service-card" id="farming-info-link">
+                <h3>AI ব্যবহার করে কৃষি তথ্য পান</h3>
+                <p>ফসল নির্বাচন গাইড, মাটি ব্যবস্থাপনা টিপস এবং বাজারের প্রবণতা সহ কৃষি তথ্যের একটি বিশাল লাইব্রেরি অ্যাক্সেস করুন। নতুন এবং অভিজ্ঞ কৃষক উভয়ের জন্যই আদর্শ।</p>
+                <div class="service-price">Free</div>
+            </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 উদ্যমকৃষি. All rights reserved.
+    </div>
+</body>
+</html>

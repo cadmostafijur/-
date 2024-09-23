@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>যোগাযোগ - উদ্যমকৃষি</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1, h2 {
+            color: #008080;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            width: 100%;
+            background-color: #008080;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #004d4d;
+            color: #e0e0e0;
+        }
+
+        /* Main Content Styles */
+        .content {
+            margin-top: 100px; /* Adjust for the height of the navbar */
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #aaaaaa;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #008080;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #004d4d;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/home">হোম</a>
+        <a href="/about">সম্পর্কে</a>
+        <a href="/contact" class="active">যোগাযোগ</a>
+        <a href="/login">লগইন</a>
+        <a href="/registration">রেজিস্ট্রার</a>
+        <a href="/services" id="services-link" style="display: none;">সেবাসমূহ</a>
+        <a href="/agroshop" id="agroshop-link" style="display: none;">এগ্রোশপ</a>
+    </div>
+
+    <div class="content">
+        <h1>যোগাযোগ Us</h1>
+        <p>
+            আপনার যদি কোন প্রশ্ন থাকে বা আরও তথ্যের প্রয়োজন হয়, দয়া করে নীচের ফর্মটি ব্যবহার করে আমাদের সাথে যোগাযোগ করুন বা ইমেল বা ফোনের মাধ্যমে আমাদের সাথে যোগাযোগ করুন।
+        </p>
+        <form action="/submitContactForm" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 উদ্যমকৃষি. All rights reserved.
+    </div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User ড্যাশবোর্ড</title>
+    <!-- Link to Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #008080; /* Teal header */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4; /* Light background for content */
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #008080; /* Teal color for headings */
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-section {
+            width: 22%;
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid #dddddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-section:hover {
+            transform: scale(1.05);
+        }
+
+        .dashboard-section h3 {
+            color: #008080;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .dashboard-section p {
+            color: #666666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-section-icon {
+            font-size: 40px;
+            color: #008080;
+            margin-bottom: 15px;
+        }
+
+        .logout-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .logout-container a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 12px 30px;
+            background-color: #008080;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .logout-container a:hover {
+            background-color: #004d4d;
+            transform: scale(1.05);
+        }
+        
+        /* Navigation Bar Styles */
+        .navbar {
+            width: 100%;
+            background-color: #008080;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #004d4d;
+            color: #e0e0e0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/home" class="active">হোম</a>
+        <a href="/about">সম্পর্কে</a>
+        <a href="/services">সেবাসমূহ</a>
+        <a href="/agroshop">এগ্রোশপ</a>
+        <a href="/contact">যোগাযোগ</a>
+    </div>
+
+    <div class="container">
+        <h2>Welcome, [[${user.getFullname()}]]</h2>
+
+        <div class="dashboard-content">
+            <!-- Profile Section -->
+            <div class="dashboard-section" onclick="window.location.href='/profile'">
+                <div class="dashboard-section-icon">👤</div>
+                <h3>Profile</h3>
+                <p>View and update your personal information.</p>
+            </div>
+
+            <!-- Cart Section -->
+            <div class="dashboard-section" onclick="window.location.href='/cart'">
+                <div class="dashboard-section-icon">🛒</div>
+                <h3>Cart</h3>
+                <p>Review items in your shopping cart.</p>
+            </div>
+
+            <!-- Chat with AI Assistant Section -->
+            <div class="dashboard-section" onclick="window.location.href='/chat-ai'">
+                <div class="dashboard-section-icon">💬</div>
+                <h3>Chat with AI Assistant</h3>
+                <p>Get help and support from our AI assistant.</p>
+            </div>
+
+            <!-- Sell Section -->
+            <div class="dashboard-section" onclick="window.location.href='/sell'">
+                <div class="dashboard-section-icon">💵</div>
+                <h3>Sell</h3>
+                <p>Manage and list your items for sale.</p>
+            </div>
+            <div class="dashboard-section" onclick="window.location.href='http://localhost:8000/CropDiseaseDetection/index.html'">
+                <div class="dashboard-section-icon">🩺</div>
+                <h3>Diseases Check</h3>
+                <p>Check and monitor disease symptoms.</p>
+            </div>
+            
+            
+        </div>
+
+        <div class="logout-container">
+            <a th:href="@{/logout}" sec:authorize="isAuthenticated">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
